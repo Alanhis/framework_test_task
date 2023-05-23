@@ -108,7 +108,7 @@ export function MainComp() {
           )}
         />
       </div>
-      <PaintContainer data={paints} />
+      <PaintContainer data={selectedPaints} />
       <div>
         <Button
           disabled={page === 1}

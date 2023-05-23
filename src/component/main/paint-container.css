@@ -1,0 +1,38 @@
+.grid-container {
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(12, 75px);
+  justify-content: center;
+}
+.grid-1 {
+  grid-column: 1/5;
+}
+.grid-2 {
+  grid-column: 5/9;
+}
+.grid-3 {
+  grid-column: 9/13;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.image-text {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-24px);
+  text-align: start;
+  padding-left: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 341px;
+}

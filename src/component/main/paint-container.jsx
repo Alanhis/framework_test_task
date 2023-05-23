@@ -1,14 +1,24 @@
-import { Responsive as ResponsiveGridLayout } from "react-grid-layout";
+import "./paint-container.css";
 
 export function PaintContainer(props) {
+  console.log(props);
+
   return (
-    <section>
-      <ResponsiveGridLayout
-        className="layout"
-        //   layouts={layouts}
-        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-        cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
-      ></ResponsiveGridLayout>
+    <section className="grid-container">
+      {props.data.map((paint, index) => {
+        console.log(index);
+        console.log(paint.name);
+        return (
+          <div className={"grid-" + ((index % 3) + 1)} key={index}>
+            <img
+              className="image"
+              src={"https://test-front.framework.team" + paint.imageUrl}
+              alt={paint.name}
+            ></img>
+            <p className="image-text">{paint.name}</p>
+          </div>
+        );
+      })}
     </section>
   );
 }
