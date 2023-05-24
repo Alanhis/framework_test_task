@@ -1,4 +1,4 @@
-import "./paint-container.css";
+import "./paint-container.scss";
 
 export function PaintContainer(props) {
   return (
@@ -17,7 +17,7 @@ export function PaintContainer(props) {
           }
         });
         return (
-          <div className={"grid-" + ((index % 3) + 1)} key={index}>
+          <div className={"grid"} key={index}>
             <img
               className="image"
               src={"https://test-front.framework.team" + paint.imageUrl}

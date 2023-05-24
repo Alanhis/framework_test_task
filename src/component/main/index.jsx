@@ -5,27 +5,31 @@ import { PaintContainer } from "./paint-container";
 export function MainComp() {
   const [authorlist, setAuthorList] = useState([]);
   const [author, setAuthor] = useState();
+
   const [locationlist, setLocationList] = useState([]);
   const [location, setLocation] = useState();
+
   const [name, setName] = useState();
+
   const [startYear, setStartYear] = useState();
   const [endYear, setEndYear] = useState();
+
   const [paints, setPaints] = useState([]);
   const [selectedPaints, setSelectedPaints] = useState([]);
+
   const [page, setPage] = useState(1);
-  let lastPage = 0;
 
   // Подгрузка первычных элементов от api
   useEffect(() => {
     getAuthor().then((data) => {
-      data.map((author) => {
+      data.forEach((author) => {
         setAuthorList((oldArray) => [
           ...oldArray,
           { value: author.id, label: author.name },
         ]);
       });
       getLocation().then((data) => {
-        data.map((location) => {
+        data.forEach((location) => {
           setLocationList((oldArray) => [
             ...oldArray,
             { value: location.id, label: location.location },
@@ -63,38 +67,43 @@ export function MainComp() {
 
   return (
     <main>
-      <div>
+      <div className="filter-container">
         <Input
+          className="selector"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
+            setPage(1);
           }}
         />
         <Select
           defaultValue=""
-          style={{ width: 120 }}
+          className="selector"
           options={authorlist}
           onChange={(id) => {
             setAuthor(id);
+            setPage(1);
           }}
         />
         <Select
+          className="selector"
           defaultValue=""
-          style={{ width: 120 }}
           options={locationlist}
           onChange={(id) => {
             setLocation(id);
+            setPage(1);
           }}
         />
         <Select
+          className="selector"
           defaultValue=""
-          style={{ width: 120 }}
           dropdownRender={(menu) => (
             <>
               <Input
                 value={startYear}
                 onChange={(e) => {
                   setStartYear(e.target.value);
+                  setPage(1);
                 }}
               />
               -
@@ -102,6 +111,7 @@ export function MainComp() {
                 value={endYear}
                 onChange={(e) => {
                   setEndYear(e.target.value);
+                  setPage(1);
                 }}
               />
             </>
@@ -113,7 +123,7 @@ export function MainComp() {
         authors={authorlist}
         locations={locationlist}
       />
-      <div>
+      <div className="select-button">
         <Button
           disabled={page === 1}
           type="text"
