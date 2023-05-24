@@ -52,10 +52,10 @@ export function MainComp() {
       params.q = name;
     }
     if (startYear) {
-      selected._gte = startYear;
+      selected.created_gte = startYear;
     }
     if (endYear) {
-      selected._lte = endYear;
+      selected.created_lte = endYear;
     }
     getPaints(params).then((result) => setPaints(result));
 
