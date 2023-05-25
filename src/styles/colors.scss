@@ -1,13 +1,16 @@
 :root {
-  --font-color: #333;
-  --background-color: #eee;
-  --link-color: cornflowerblue;
+  --icon-color: invert(0%) sepia(93%) saturate(30%) hue-rotate(62deg)
+    brightness(92%) contrast(106%);
+  --font-color: #000000;
+  --background-color: #ffffff;
+  --unactive-color: rgba(0, 0, 0, 0.3);
 }
 
 /* 2 */
 [data-theme="dark"] {
+  --icon-color: invert(100%) sepia(100%) saturate(0%) hue-rotate(308deg)
+    brightness(101%) contrast(103%);
   --font-color: #ffffff;
+  --unactive-color: #ffffff4d;
   --background-color: #000000;
-  --color-on-hold: #464646;
-  --link-color: lightblue;
 }

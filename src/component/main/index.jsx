@@ -78,6 +78,7 @@ export function MainComp() {
           }}
         />
         <Select
+          allowClear
           placeholder="Author"
           className="selector"
           options={authorlist}
@@ -87,6 +88,7 @@ export function MainComp() {
           }}
         />
         <Select
+          allowClear
           placeholder="Location"
           className="selector"
           options={locationlist}
@@ -109,7 +111,7 @@ export function MainComp() {
                   setPage(1);
                 }}
               />
-              -
+              <hr className="line" />
               <Input
                 placeholder="before"
                 className="select-year"
