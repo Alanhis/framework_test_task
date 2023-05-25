@@ -103,16 +103,17 @@
   }
 }
 
-// Да начнется черная магия 
+// Да начнется черная магия (да простит меня проверяющий этот код)
 .ant-pagination-item-active {
   a{
     color:white !important;
   }
+  color:white !important;
   background-color: #000000 !important;
-  border-color: rgba(255,255,255,0) !important;
+ 
 }
 .ant-pagination-item  {
-  border: 1px solid !important;
+  border: 1px solid black !important;
   margin-inline-end: 0 !important;
   border-radius: 0 !important;
   border-width: 1px
@@ -125,4 +126,7 @@
 }
 .ant-btn{
   @extend .ant-pagination-item;
+}
+.ant-select-item-option-active{
+  @extend .ant-pagination-item-active
 }
