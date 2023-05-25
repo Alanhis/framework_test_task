@@ -1,5 +1,11 @@
+import PropTypes from "prop-types";
 import "./paint-container.scss";
-
+import React from "react";
+PaintContainer.propTypes = {
+  data: PropTypes.array,
+  authors: PropTypes.array,
+  locations: PropTypes.array,
+};
 export function PaintContainer(props) {
   return (
     <section className="grid-container">
