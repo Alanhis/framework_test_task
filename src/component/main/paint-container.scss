@@ -16,11 +16,12 @@
 }
 .text-container {
   background: rgba(255, 255, 255, 0.75);
-  transform: translateY(-24px);
+  transform: translateY(-23px);
   text-align: start;
   padding-left: 20px;
   overflow: hidden;
   height: 20px;
+  border-radius: 0 0 20px 20px;
 }
 .text-container:hover {
   display: flex;
@@ -28,7 +29,7 @@
   gap: 5px;
   height: auto;
   height: 145px;
-  transform: translateY(-149px);
+  transform: translateY(-148px);
 }
 .image-text {
   margin: 0;
