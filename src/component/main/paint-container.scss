@@ -1,132 +1,134 @@
-@import '../../styles/main';
-
+@import "../../styles/main";
 
 .grid-container {
-    @extend %container;
-       
-  }
+  @extend %container;
+}
 
-  .grid {
-    grid-column: span 4;
-    height: 275px;
-  }
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-  }
-  .text-container {
-    background: rgba(255, 255, 255, 0.75);
-    transform: translateY(-24px);
-    text-align: start;
-    padding-left: 20px;
-    overflow: hidden;
-    height: 20px;
-  }
-  .text-container:hover {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    height: auto;
-    height: 145px;
-    transform: translateY(-149px);
-  }
-  .image-text {
-    margin: 0;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 20px;
-    text-transform: capitalize;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 341px;
-  }
-  .image-text-title {
-    font-family: "Roboto";
-    font-style: normal;
-    font-size: 13px;
-    line-height: 20px;
-    color: #000000;
-  }
-  .image-text-main {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 13px;
-    line-height: 20px;
-    color: #000000;
-  }
-  .filter-container {
-   @extend %container;
-   padding-bottom: 45px;
-  }
-  .selector-page {
-    display: flex;
-    padding-top: 35px;
-  }
-  .selector {
-    grid-column: span 3;
-    text-align: start;
-  }
-  .select-button{
-    display: flex;
-    padding-top: 40px;
-  }
-.select-year{
+.grid {
+  grid-column: span 4;
+  height: 275px;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.text-container {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-24px);
+  text-align: start;
+  padding-left: 20px;
+  overflow: hidden;
+  height: 20px;
+}
+.text-container:hover {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: auto;
+  height: 145px;
+  transform: translateY(-149px);
+}
+.image-text {
+  margin: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 341px;
+}
+.image-text-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000000;
+}
+.image-text-main {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000000;
+}
+.filter-container {
+  @extend %container;
+  padding-bottom: 45px;
+}
+.selector-page {
+  display: flex;
+  padding-top: 35px;
+}
+.selector {
+  grid-column: span 3;
+  text-align: start;
+}
+.select-button {
+  display: flex;
+  padding-top: 40px;
+}
+.select-year {
   grid-column: span 1;
 }
-.year-container{
+.year-container {
   display: flex;
-  gap:10px;
-  padding: 20px ;
- 
+  gap: 10px;
+  padding: 20px;
 }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .grid {
-      grid-column: span 6;
-      height: 275px;
-    }
-
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .year-container {
+    display: grid;
+  }
 }
-@media  (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid {
+    grid-column: span 6;
+    height: 275px;
+  }
+  .year-container {
+    display: grid;
+  }
+}
+@media (max-width: 767px) {
   .grid {
     grid-column: span 4;
     height: 275px;
   }
-  .selector{
+  .selector {
     grid-column: span 4;
   }
 }
 
 // Да начнется черная магия (да простит меня проверяющий этот код)
 .ant-pagination-item-active {
-  a{
-    color:white !important;
+  a {
+    color: white !important;
   }
-  color:white !important;
+  color: white !important;
   background-color: #000000 !important;
- 
 }
-.ant-pagination-item  {
+.ant-pagination-item {
   border: 1px solid black !important;
   margin-inline-end: 0 !important;
   border-radius: 0 !important;
-  border-width: 1px
+  border-width: 1px;
 }
-.ant-pagination-item-link{
+.ant-pagination-item-link {
   @extend .ant-pagination-item;
 }
-.ant-pagination-prev{
+.ant-pagination-prev {
   margin-inline-end: 0 !important;
 }
-.ant-btn{
+.ant-btn {
   @extend .ant-pagination-item;
 }
-.ant-select-item-option-active{
-  @extend .ant-pagination-item-active
+.ant-select-item-option-active {
+  @extend .ant-pagination-item-active;
 }
