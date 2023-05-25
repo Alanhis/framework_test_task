@@ -1,6 +1,6 @@
 import { Input, Select, Pagination, Button } from "antd";
 import { getAuthor, getLocation, getPaints } from "../../utils/api";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PaintContainer } from "./paint-container";
 export function MainComp() {
   const [authorlist, setAuthorList] = useState([]);
@@ -69,6 +69,7 @@ export function MainComp() {
     <main>
       <div className="filter-container">
         <Input
+          placeholder="Name"
           className="selector"
           value={name}
           onChange={(e) => {
@@ -77,7 +78,7 @@ export function MainComp() {
           }}
         />
         <Select
-          defaultValue=""
+          placeholder="Author"
           className="selector"
           options={authorlist}
           onChange={(id) => {
@@ -86,8 +87,8 @@ export function MainComp() {
           }}
         />
         <Select
+          placeholder="Location"
           className="selector"
-          defaultValue=""
           options={locationlist}
           onChange={(id) => {
             setLocation(id);
@@ -96,10 +97,12 @@ export function MainComp() {
         />
         <Select
           className="selector"
-          defaultValue=""
-          dropdownRender={(menu) => (
-            <>
+          placeholder="Created"
+          dropdownRender={() => (
+            <div className="year-container">
               <Input
+                placeholder="from"
+                className="select-year"
                 value={startYear}
                 onChange={(e) => {
                   setStartYear(e.target.value);
@@ -108,13 +111,15 @@ export function MainComp() {
               />
               -
               <Input
+                placeholder="before"
+                className="select-year"
                 value={endYear}
                 onChange={(e) => {
                   setEndYear(e.target.value);
                   setPage(1);
                 }}
               />
-            </>
+            </div>
           )}
         />
       </div>

@@ -1,6 +1,7 @@
+import React from "react";
 import MainIcon from "../../icons/icon.svg";
 import LightIcon from "../../icons/light.svg";
-import './header.css'
+import "./header.scss";
 export function HeaderComp() {
   return (
     <header className="Header">

@@ -1,12 +1,12 @@
-
-import './App.css';
-import { HeaderComp } from './component/header/index';
-import { MainComp } from './component/main';
+import React from "react";
+import "./App.css";
+import { HeaderComp } from "./component/header/index";
+import { MainComp } from "./component/main";
 function App() {
   return (
-    <div className='App'>
-    <HeaderComp />
-    <MainComp />
+    <div className="App">
+      <HeaderComp />
+      <MainComp />
     </div>
   );
 }
