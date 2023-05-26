@@ -78,6 +78,7 @@
 .select-button {
   display: flex;
   padding-top: 40px;
+  padding-bottom: 20px;
 }
 .select-year {
   grid-column: span 1;
@@ -88,6 +89,7 @@
   padding: 20px;
   align-items: center;
 }
+// Настройка контейнеров  под разные дивайсы
 @media (min-width: 1024px) and (max-width: 1365px) {
   .year-container {
     display: grid;
@@ -113,6 +115,7 @@
 }
 
 // Да начнется черная магия (да простит меня проверяющий этот код)
+// Делал это для того, чтобы я могу полноценно перенести цвета от разных тем для компонентов ant
 .ant-pagination-item {
   border: 1px solid var(--font-color) !important;
   margin-inline-end: 0 !important;

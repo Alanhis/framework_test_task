@@ -9,6 +9,7 @@ PaintContainer.propTypes = {
 export function PaintContainer(props) {
   return (
     <section className="grid-container">
+      {/* Получение названия места и автора  */}
       {props.data.map((paint, index) => {
         var author;
         var location;

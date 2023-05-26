@@ -21,6 +21,7 @@ export function MainComp() {
 
   // Подгрузка первычных элементов от api
   useEffect(() => {
+    //Загрузка списка авторов
     getAuthor().then((data) => {
       data.forEach((author) => {
         setAuthorList((oldArray) => [
@@ -28,6 +29,7 @@ export function MainComp() {
           { value: author.id, label: author.name },
         ]);
       });
+      //Загрузка списка музеев (?)
       getLocation().then((data) => {
         data.forEach((location) => {
           setLocationList((oldArray) => [
@@ -36,9 +38,11 @@ export function MainComp() {
           ]);
         });
       });
+      //Самые начальные картины
       getPaints("").then((result) => setPaints(result));
     });
   }, []);
+  // Подгрузка картин с использованием фильтрации
   useEffect(() => {
     let params = {};
     let selected = params;
@@ -67,6 +71,7 @@ export function MainComp() {
 
   return (
     <main>
+      {/* Компонент фильтрации */}
       <div className="filter-container">
         <Input
           placeholder="Name"
@@ -125,11 +130,13 @@ export function MainComp() {
           )}
         />
       </div>
+      {/* Сам список картин */}
       <PaintContainer
         data={selectedPaints}
         authors={authorlist}
         locations={locationlist}
       />
+      {/* Переключатель между страницами */}
       <div className="select-button">
         <Button
           disabled={page === 1}
