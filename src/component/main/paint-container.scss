@@ -79,7 +79,6 @@
   display: flex;
   padding-top: 40px;
   padding-bottom: 20px;
-  justify-content: center;
 }
 .select-year {
   grid-column: span 1;
@@ -112,6 +111,9 @@
   }
   .selector {
     grid-column: span 4;
+  }
+  .select-button {
+    justify-content: center;
   }
 }
 
