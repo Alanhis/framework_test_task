@@ -27,6 +27,7 @@ export function PaintContainer(props) {
           <div className={"grid"} key={index}>
             <img
               className="image"
+              loading="lazy"
               src={"https://test-front.framework.team" + paint.imageUrl}
               alt={paint.name}
             ></img>
