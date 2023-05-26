@@ -27,9 +27,9 @@ export function HeaderComp() {
   const toggleTheme = () => {
     console.log(theme);
     if (theme) {
-      setLight();
-    } else {
       setDark();
+    } else {
+      setLight();
     }
     setTheme(!theme);
   };
